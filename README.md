@@ -32,29 +32,53 @@ pip install qiskit qiskit-aer matplotlib numpy
 ```
 python3 qrng.py
 ```
+![Screenshot 2025-02-20 164053](https://github.com/user-attachments/assets/326c746a-e7c9-4bc7-9c08-5deefc667043)
+- This means the quantum circuit generated the binary number 0110, which is 6 in decimal.
 
 ### 5. Run the Classical RNG
 ```
 python3 classical_rng.py
 ```
+![Screenshot 2025-02-20 164103](https://github.com/user-attachments/assets/0e23ca4f-7a4e-4ac4-9095-41846d365c3c)
+- This means the classical RNG generated the binary number 1100110101101001, which is 52585 in decimal.
+
 
 ### 6. Generate 1000 Samples and Compare
+- To compare the randomness between quantum and classical RNGs, we generate 1000 random numbers and visualize their distribution.
+
+#### Quantum RNG:
 ```
 python3 qrng_1000.py
+```
+- **Histogram Output**: A plot will appear and save to `results/qrng_distribution.png`.
+  - The histogram should be uniformly distributed, confirming that the QRNG produces unbiased randomness.
+![Screenshot 2025-02-20 165110](https://github.com/user-attachments/assets/cbc6319c-623e-4c57-b235-d941a3a3219f)
+
+#### Classical RNG:
+```
 python3 classical_rng_1000.py
 ```
+- **Histogram Output**: A plot will appear and save to `results/classical_rng_distribution.png`.
+  - The classical RNG's histogram should also be uniformly distributed, but it relies on deterministic algorithms.
+![Screenshot 2025-02-20 164636](https://github.com/user-attachments/assets/9c64e1de-199e-412f-a068-8ff8cc06d001)
+
+#### Summary
+- After running the scripts, the `results/` folder will contain `qrng_distribution.png` and `classical_rng_distribution.png`.
+![Screenshot 2025-02-20 171427](https://github.com/user-attachments/assets/ffcb1bea-c516-48f6-a7eb-ed1455f823f6)
+
+- Both distributions should look fairly uniform, but the quantum version provides true randomness, unlike the classical RNG.
 - Classical RNG: Shows uneven distribution, minor clustering.
 - Quantum RNG: More evenly distributed, demonstrating true randomness.
 
 
 ## Comparison of Quantum RNG and Classical RNG Distributions
-### Classical RNG Distribution (First Image - Red)
+### Classical RNG Distribution (Red Color Distribution)
 - The histogram represents the distribution of 1,000 random numbers generated using a classical (pseudo-random) RNG.
 - The distribution is somewhat uniform but shows irregular spikes and dips due to the deterministic nature of classical RNGs.
 - Classical RNGs rely on algorithms and seed values, meaning they are not truly random but pseudo-random.
 - Some bins have noticeably higher frequencies than others, indicating potential patterns or clustering effects.
 
-### Quantum RNG Distribution (Second Image - Blue)
+### Quantum RNG Distribution (Second Color Distribution)
 - This histogram represents the distribution of 1,000 random numbers generated using a quantum RNG.
 - The distribution appears more uniform compared to the classical RNG, as quantum randomness is inherently unbiased.
 - Since quantum RNGs leverage quantum superposition and measurement, they provide true randomness, free from algorithmic patterns.
@@ -75,10 +99,10 @@ python3 classical_rng_1000.py
 
 
 ## Use Cases
-- Cryptography: Secure encryption key generation.
-- Simulations: Quantum-based Monte Carlo methods.
-- Gaming: Fair and unbiased number generation.
-- Scientific Research: True randomness for experiments.
+- **Cryptography**: Secure encryption key generation.
+- **Simulations**: Quantum-based Monte Carlo methods.
+- **Gaming**: Fair and unbiased number generation.
+- **Scientific Research**: True randomness for experiments.
 
 ## Project Structure
 ```
