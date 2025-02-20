@@ -63,7 +63,7 @@ python3 classical_rng_1000.py
 ![Screenshot 2025-02-20 164636](https://github.com/user-attachments/assets/9c64e1de-199e-412f-a068-8ff8cc06d001)
 
 #### Summary
-- After running the scripts, the `results/` folder will contain `qrng_distribution.png` and `classical_rng_distribution.png`.
+- After running the scripts, the `results/` folder will contain `qrng_distribution.png` and `classical_rng_distribution.png`. <br>
 ![Screenshot 2025-02-20 171427](https://github.com/user-attachments/assets/ffcb1bea-c516-48f6-a7eb-ed1455f823f6)
 
 - Both distributions should look fairly uniform, but the quantum version provides true randomness, unlike the classical RNG.
