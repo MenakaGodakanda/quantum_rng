@@ -75,7 +75,6 @@ python3 classical_rng_1000.py
 - Classical RNG: Shows uneven distribution, minor clustering.
 - Quantum RNG: More evenly distributed, demonstrating true randomness.
 
-
 ## Comparison of Quantum RNG and Classical RNG Distributions
 ### Classical RNG Distribution (Red Color Distribution)
 - The histogram represents the distribution of 1,000 random numbers generated using a classical (pseudo-random) RNG.
@@ -102,6 +101,21 @@ python3 classical_rng_1000.py
 - Classical RNGs, while useful, are not truly random and can introduce patterns, as seen in the variations of bar heights in the histogram.
 - Quantum RNGs are essential for applications requiring true randomness, such as cryptography, secure communications, and scientific simulations.
 
+## Quantum Circuit for Random Number Generation
+- You can visualize the quantum circuit in ASCII format using Qiskit's built-in `QuantumCircuit.draw('text')` method.
+- Run `Quantum_circuit_rng.py` script to visualize the quantum circuit:
+```
+python3 Quantum_circuit_rng.py
+```
+- Here's how your quantum circuit would look for generating random 16-bit numbers:<br>
+
+![Screenshot 2025-02-20 181652](https://github.com/user-attachments/assets/4fadece7-e6d4-4994-86f7-f2489f2a5c6c)
+
+- Each qubit q_0 to q_15 starts in the |0⟩ state.
+- Hadamard gates (H) are applied to each qubit, putting them into superposition, creating a random state.
+- The qubits are measured, collapsing them into classical 0s or 1s.
+- The resulting bitstring is interpreted as a random number.
+- This is the quantum equivalent of flipping a fair coin 16 times, generating a true random binary number.
 
 ## Use Cases
 - **Cryptography**: Secure encryption key generation.
@@ -116,6 +130,7 @@ quantum_rng/
 │── qrng_1000.py                        # QRNG script for generating 1000 samples
 │── classical_rng.py                    # Classical RNG script
 │── classical_rng_1000.py               # Classical RNG script for generating 1000 samples
+│── Quantum_circuit_rng.py              # Visualize the quantum circuit of rng
 │── results/
 │   ├── qrng_distribution.png           # QRNG histogram
 │   ├── classical_rng_distribution.png  # Classical RNG histogram
