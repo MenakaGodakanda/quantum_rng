@@ -6,10 +6,6 @@ This project implements a Quantum Random Number Generator (QRNG) using Qiskit, a
 
 <img width="878" alt="Screenshot 2025-02-20 at 5 36 42 pm" src="https://github.com/user-attachments/assets/c52555ff-1f2b-4c5f-b3ac-9be52bc9a7e6" />
 
-## Explanation:
-
-
-
 ## Installation & Setup
 ### 1. Clone the Repository
 ```
@@ -35,6 +31,12 @@ python3 qrng.py
 ![Screenshot 2025-02-20 164053](https://github.com/user-attachments/assets/326c746a-e7c9-4bc7-9c08-5deefc667043)
 - This means the quantum circuit generated the binary number 0110, which is 6 in decimal.
 
+#### Quantum RNG Process
+- **Quantum Circuit Creation**: A quantum circuit with `n` qubits is initialized.
+- **Superposition**: Hadamard gates are applied to qubits, placing them in equal superposition.
+- **Measurement**: Qubits collapse randomly to `0` or `1`, producing an unbiased random bitstring.
+- **Bit Conversion**: The bitstring is converted into an integer for analysis.
+
 ### 5. Run the Classical RNG
 ```
 python3 classical_rng.py
@@ -42,6 +44,9 @@ python3 classical_rng.py
 ![Screenshot 2025-02-20 164103](https://github.com/user-attachments/assets/0e23ca4f-7a4e-4ac4-9095-41846d365c3c)
 - This means the classical RNG generated the binary number 1100110101101001, which is 52585 in decimal.
 
+#### Classical RNG Process
+- **Pseudo-Random Generation**: Uses Python's `random.randint()` to generate numbers.
+- **Pattern Analysis**: Distribution is analyzed and compared against quantum randomness.
 
 ### 6. Generate 1000 Samples and Compare
 - To compare the randomness between quantum and classical RNGs, we generate 1000 random numbers and visualize their distribution.
